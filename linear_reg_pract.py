@@ -15,15 +15,20 @@ df['pct_change'] = (df['Close'] - df['Open']) / df['Open'] * 100
 df = df[['Close', 'hl_pct', 'pct_change', 'Volume']]
 
 forecast_col = 'Close'
-df.fillna(-99999, inplace=True)
+df.fillna(1, inplace=True)
 
-forecast_out = int(math.ceil(0.1*len(df)))
+forecast_out = int(math.ceil(0.01*len(df)))
 df['label'] = df[forecast_col].shift(-forecast_out)
+df.fillna(1, inplace=True)
+
+print(df)
 
 X = np.array(df.drop(['label'], 1))
 y = np.array(df['label'])
 X = preprocessing.scale(X)
-y = np.array(df['label'])
+y = np.array(df)
+
+print(len(X), len(y))
 
 X_train, X_test, y_train, y_test = model_selection.train_test_split(X, y)
 
