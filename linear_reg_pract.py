@@ -17,16 +17,19 @@ df = df[['Close', 'hl_pct', 'pct_change', 'Volume']]
 forecast_col = 'Close'
 df.fillna(1, inplace=True)
 
-forecast_out = int(math.ceil(0.01*len(df)))
+forecast_out = int(math.ceil(0.1*len(df)))
 df['label'] = df[forecast_col].shift(-forecast_out)
 df.fillna(1, inplace=True)
-
-print(df)
 
 X = np.array(df.drop(['label'], 1))
 y = np.array(df['label'])
 X = preprocessing.scale(X)
 y = np.array(df)
+
+X_lately = X[-forecast_out:]
+
+##df.dropna(inplace=True)
+##y = np.array(df['label'])
 
 print(len(X), len(y))
 
@@ -36,4 +39,6 @@ clf = LinearRegression()
 clf.fit(X_train, y_train)
 acc = clf.score(X_test, y_test)
 
-print(acc)
+forecast_set = clf.predict(X_lately)
+
+print(forecast_set, acc, forecast_out)
