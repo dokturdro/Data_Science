@@ -1,69 +1,56 @@
 import pandas as pd
-import quandl, math
 import numpy as np
-import datetime
-from scipy import sparse
-from sklearn import preprocessing, model_selection, svm
-from sklearn.linear_model import LinearRegression
-import seaborn as sns
 import matplotlib.pyplot as plt
-from matplotlib import style
 
-style.use('ggplot')
+df = pd.read_csv(r'C:\Users\Administrator\Desktop\datasets\crypto\crypto-markets.csv')
+df = df.loc[df['name'] == 'Litecoin']
 
-quandl.ApiConfig.api_key = "EzAELjGNysBk6Nmf5Zn4"
+print(df.columns)
+print("======")
+print(df.head(20))
+print("======")
+print(df.info())
+print("======")
+print(df.isnull().any())
 
-df = quandl.get("WSE/PLAY")
+df = df.drop(['symbol', 'slug', 'ranknow', 'spread', 'close_ratio'], 1)
+print(df.columns)
+print(df.describe())
 
-df = df[['Open', 'High', 'Low', 'Close', 'Volume']]
-df['hl_pct'] = (df['High'] - df['Close']) / df['Close'] * 100
-df['pct_change'] = (df['Close'] - df['Open']) / df['Open'] * 100
-df = df[['Close', 'hl_pct', 'pct_change', 'Volume']]
+df['date'] = pd.to_datetime(df['date'])
+df = df.set_index('date')
+print(df.head())
 
-forecast_col = 'Close'
-df.fillna(1, inplace=True)
 
-forecast_out = int(math.ceil(0.1*len(df)))
-df['label'] = df[forecast_col].shift(-forecast_out)
-df.fillna(1, inplace=True)
+##df.close.resample('W').mean().plot()
+##plt.show()
+##df["2017-06-01":].close.plot()
+##plt.show()
 
-X = np.array(df.drop(['label'], 1))
-y = np.array(df['label'])
-X = preprocessing.scale(X)
-y = np.array(df)
+df = df["2017-06-01":]
+df['hilo'] = (df['high'] - df['close']) / df['close'] * 100
+df['pct_change'] = (df['close'] - df['open']) / df['open'] * 100
+print(df.corr()["close"])
+df = df.drop('name', 1)
 
-X_lately = X[-forecast_out:]
+from sklearn.model_selection import cross_val_score, cross_validate, train_test_split
+from sklearn.linear_model import LinearRegression, LogisticRegression
+from sklearn.preprocessing import MinMaxScaler
 
-df.dropna(inplace=True)
-y = np.array(df['label'])
+X = df.drop('close', 1)
+y = df['close']
 
-print(len(X), len(y))
+scaler = MinMaxScaler(feature_range=(0,1))
+X = scaler.fit_transform(X)
 
-X_train, X_test, y_train, y_test = model_selection.train_test_split(X, y)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
 
-clf = LinearRegression()
-clf.fit(X_train, y_train)
-acc = clf.score(X_test, y_test)
+model = LinearRegression()
+model.fit(X_train, y_train)
 
-forecast_set = clf.predict(X_lately)
+linreg_r2 = model.score(X_test, y_test)
+print(linreg_r2)
 
-print(forecast_set, acc, forecast_out)
+predict = model.predict(X_train)
 
-df['Forecast'] = np.nan
-
-last_date = df.iloc[-1].name
-last_unix = last_date.timestamp()
-one_day = 86400
-next_unix = last_unix + one_day
-
-for i in forecast_set:
-    next_date = datetime.datetime.fromtimestamp(next_unix)
-    next_unix += one_day
-    df.loc[next_date] =[np.nan for _ in range(len(df.columns)-1)] + [i]
-
-df['Close'].plot()
-df['Forecast'].plot()
-plt.legend(loc=4)
-plt.xlabel('Date')
-plt.ylabel('Price')
-plt.show()
+print(predict)
