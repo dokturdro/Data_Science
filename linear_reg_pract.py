@@ -53,4 +53,12 @@ print(linreg_r2)
 
 predict = model.predict(X_train)
 
-print(predict)
+##print(predict)
+
+plt.plot(df['close'], color = 'blue', label = "Litecoin price")
+##plt.plot(predict, color = 'g', label = "Predicted crypto price")
+plt.title('Crypto price prediction')
+plt.xlabel('Time')
+plt.ylabel('Price')
+plt.legend()
+plt.show()
