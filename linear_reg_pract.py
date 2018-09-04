@@ -6,11 +6,8 @@ df = pd.read_csv(r'C:\Users\Administrator\Desktop\datasets\crypto\crypto-markets
 df = df.loc[df['name'] == 'Litecoin']
 
 print(df.columns)
-print("======")
 print(df.head(20))
-print("======")
 print(df.info())
-print("======")
 print(df.isnull().any())
 
 df = df.drop(['symbol', 'slug', 'ranknow', 'spread', 'close_ratio'], 1)
@@ -21,12 +18,6 @@ df['date'] = pd.to_datetime(df['date'])
 df = df.set_index('date')
 print(df.head())
 
-
-##df.close.resample('W').mean().plot()
-##plt.show()
-##df["2017-06-01":].close.plot()
-##plt.show()
-
 df = df["2017-06-01":]
 df['hilo'] = (df['high'] - df['close']) / df['close'] * 100
 df['pct_change'] = (df['close'] - df['open']) / df['open'] * 100
@@ -34,8 +25,10 @@ print(df.corr()["close"])
 df = df.drop('name', 1)
 
 from sklearn.model_selection import cross_val_score, cross_validate, train_test_split
-from sklearn.linear_model import LinearRegression, LogisticRegression
+from sklearn.linear_model import LinearRegression, Lasso, Ridge
 from sklearn.preprocessing import MinMaxScaler
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score,  mean_squared_error
 
 X = df.drop('close', 1)
 y = df['close']
@@ -45,11 +38,21 @@ X = scaler.fit_transform(X)
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
 
+classifiers = [['Lasso: ', Lasso()],
+               ['Ridge: ', Ridge()],
+               ['LinearRegression: ', LinearRegression()]]
+
+print("====== RMSE ======")
+
+
+for name,classifier in classifiers:
+    classifier = classifier
+    classifier.fit(X_train, y_train)
+    predictions = classifier.predict(X_test)
+    print(name, (np.sqrt(mean_squared_error(y_test, predictions))))
+
 model = LinearRegression()
 model.fit(X_train, y_train)
-
-linreg_r2 = model.score(X_test, y_test)
-print(linreg_r2)
 
 predict = model.predict(X_train)
 
