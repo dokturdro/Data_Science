@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import datetime
 
 df = pd.read_csv(r'C:\Users\Administrator\Desktop\datasets\crypto\crypto-markets.csv')
-df = df.loc[df['name'] == 'Litecoin']
+df = df.loc[df['name'] == 'Bitcoin']
 
 print(df.columns)
 print(df.head(20))
@@ -19,51 +19,41 @@ df['date'] = pd.to_datetime(df['date'])
 df = df.set_index('date')
 print(df.head())
 
-df = df["2017-06-01":]
+df = df["2017-01-01":]
+df['oc_diff'] = df['close']- df['open']
 df['hilo'] = (df['high'] - df['close']) / df['close'] * 100
-df['pct_change'] = (df['close'] - df['open']) / df['open'] * 100
-print(df.corr()["close"])
-df = df.drop('name', 1)
+df['daily_avg'] = (df['open'] + df['high'] + df['low'] + df['close']) / 4
+##df['mov_avg'] = df.rolling(['close'], window=5).mean()
+print(df.corr()["daily_avg"])
+df = df.drop(['name', 'volume'], 1)
 
 print('\n')
 print(df.head())
 print('\n')
 
-
 from sklearn.model_selection import cross_val_score, cross_validate, train_test_split
-from sklearn.linear_model import LinearRegression, Lasso, Ridge
+from sklearn.linear_model import LinearRegression, Lasso, Ridge, BayesianRidge, ElasticNetCV
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, mean_squared_error, r2_score
+from sklearn.ensemble import RandomForestRegressor
 
-##X = df.drop('close', 1)
-##y = df['close']
+df['forecast'] = df['daily_avg'].shift(-90)
+X = df.dropna().drop(['forecast'], axis=1)
+y = df.dropna()['forecast']
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=43)
+forecast =  df.tail(90).drop(['forecast'], 1)
 
-forecast_col = 'close'
-forecast_out = int(60)
-
-df['label'] = df[forecast_col].shift(-forecast_out)
-print('\n')
-print(df.head())
-print('\n')
-
-X = np.array(df.drop(['label'], 1))
 scaler = MinMaxScaler(feature_range=(0,1))
 X = scaler.fit_transform(X)
-X_forecast_out = X[-forecast_out:]
-X = X[:-forecast_out]
 
-y = np.array(df['label'])
-y = y[:-forecast_out]
-
-##scaler = MinMaxScaler(feature_range=(0,1))
-##X = scaler.fit_transform(X)
-##
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
 
 classifiers = [['Lasso: ', Lasso()],
                ['Ridge: ', Ridge()],
-               ['LinearRegression: ', LinearRegression()]]
+               ['LinearRegression: ', LinearRegression()],
+               ['Random Forest Regressor: ', RandomForestRegressor(n_estimators=200)],
+               ['Bayesian Ridge: ', BayesianRidge()],
+               ['Elastic Net CV: ', ElasticNetCV()]]
 
 print("====== RMSE ======")
 for name,classifier in classifiers:
@@ -76,18 +66,30 @@ print("====== Accuracy score ======")
 for name,classifier in classifiers:
     print(name, (classifier.score(X_test, y_test)))
 
-model = LinearRegression()
+
+model = RandomForestRegressor()
 model.fit(X_train, y_train)
 
-predict = model.predict(X_test)
+predict = model.predict(forecast)
 
 print(predict)
 
-##last_close = df['date'][-1]
+plt.figure(figsize=(15,8))
+(df[:-90]['daily_avg']).plot(label='Historical Price')
+(df[-91:]['daily_avg']).plot(label='Predicted Price')
+
+plt.xlabel('Time')
+plt.ylabel('Price in USD')
+plt.title('Prediction on Daily Average Price of Bitcoin')
+plt.legend()
+plt.show()
+
+
+
+##last_close = df.iloc[:,0][-1]
 ##last_date = df.iloc[-1].name.timestamp()
 ##
-##for i in range(90):
-##    last_close *= modifier
+##for i in range(30):
 ##    next_date = datetime.datetime.fromtimestamp(last_date)
 ##    last_date += 86400
 ##
