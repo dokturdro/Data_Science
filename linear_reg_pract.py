@@ -23,7 +23,6 @@ df = df["2017-01-01":]
 df['oc_diff'] = df['close']- df['open']
 df['hilo'] = (df['high'] - df['close']) / df['close'] * 100
 df['daily_avg'] = (df['open'] + df['high'] + df['low'] + df['close']) / 4
-##df['mov_avg'] = df.rolling(['close'], window=5).mean()
 print(df.corr()["daily_avg"])
 df = df.drop(['name', 'volume'], 1)
 
@@ -32,11 +31,11 @@ print(df.head())
 print('\n')
 
 from sklearn.model_selection import cross_val_score, cross_validate, train_test_split
-from sklearn.linear_model import LinearRegression, Lasso, Ridge, BayesianRidge, ElasticNetCV
+from sklearn.linear_model import LinearRegression, BayesianRidge, ElasticNetCV
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, mean_squared_error, r2_score
-from sklearn.ensemble import RandomForestRegressor
+from sklearn.ensemble import RandomForestRegressor, ExtraTreesRegressor
 
 df['forecast'] = df['daily_avg'].shift(-90)
 X = df.dropna().drop(['forecast'], axis=1)
@@ -47,12 +46,10 @@ forecast =  df.tail(90).drop(['forecast'], 1)
 scaler = MinMaxScaler(feature_range=(0,1))
 X = scaler.fit_transform(X)
 
-
-classifiers = [['Lasso: ', Lasso()],
-               ['Ridge: ', Ridge()],
-               ['LinearRegression: ', LinearRegression()],
-               ['Random Forest Regressor: ', RandomForestRegressor(n_estimators=200)],
+classifiers = [['LinearRegression: ', LinearRegression()],
+               ['Random Forest Regressor: ', RandomForestRegressor(n_estimators=100)],
                ['Bayesian Ridge: ', BayesianRidge()],
+               ['ExtraTrees Regressor: ', ExtraTreesRegressor(n_estimators=500, min_samples_split=5)],
                ['Elastic Net CV: ', ElasticNetCV()]]
 
 print("====== RMSE ======")
@@ -62,44 +59,22 @@ for name,classifier in classifiers:
     predictions = classifier.predict(X_test)
     print(name, (np.sqrt(mean_squared_error(y_test, predictions))))
 
-print("====== Accuracy score ======")
+print("====== R^2 ======")
 for name,classifier in classifiers:
     print(name, (classifier.score(X_test, y_test)))
-
 
 model = RandomForestRegressor()
 model.fit(X_train, y_train)
 
 predict = model.predict(forecast)
 
-print(predict)
-
 plt.figure(figsize=(15,8))
 (df[:-90]['daily_avg']).plot(label='Historical Price')
 (df[-91:]['daily_avg']).plot(label='Predicted Price')
 
-plt.xlabel('Time')
-plt.ylabel('Price in USD')
+plt.xlabel('Date')
+plt.ylabel('Price')
 plt.title('Prediction on Daily Average Price of Bitcoin')
 plt.legend()
 plt.show()
 
-
-
-##last_close = df.iloc[:,0][-1]
-##last_date = df.iloc[-1].name.timestamp()
-##
-##for i in range(30):
-##    next_date = datetime.datetime.fromtimestamp(last_date)
-##    last_date += 86400
-##
-##    # Outputs data into DataFrame to enable plotting
-##    df.loc[next_date] = [np.nan, last_close]
-##
-##plt.plot(df['close'], color = 'blue', label = "Litecoin price")
-##plt.plot(predict, color = 'g', label = "Predicted crypto price")
-##plt.title('Crypto price prediction')
-##plt.xlabel('Time')
-##plt.ylabel('Price')
-##plt.legend()
-##plt.show()
