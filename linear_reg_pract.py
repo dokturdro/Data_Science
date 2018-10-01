@@ -46,22 +46,22 @@ forecast =  df.tail(90).drop(['forecast'], 1)
 scaler = MinMaxScaler(feature_range=(0,1))
 X = scaler.fit_transform(X)
 
-classifiers = [['LinearRegression: ', LinearRegression()],
-               ['Random Forest Regressor: ', RandomForestRegressor(n_estimators=100)],
-               ['Bayesian Ridge: ', BayesianRidge()],
-               ['ExtraTrees Regressor: ', ExtraTreesRegressor(n_estimators=500, min_samples_split=5)],
-               ['Elastic Net CV: ', ElasticNetCV()]]
+classifiers = [['LinReg: ', LinearRegression()],
+               ['RF Reg: ', RandomForestRegressor(n_estimators=100)],
+               ['BayesR: ', BayesianRidge()],
+               ['ExTReg: ', ExtraTreesRegressor(n_estimators=200, min_samples_split=5)],
+               ['ENetCV: ', ElasticNetCV()]]
 
 print("====== RMSE ======")
 for name,classifier in classifiers:
     classifier = classifier
     classifier.fit(X_train, y_train)
     predictions = classifier.predict(X_test)
-    print(name, (np.sqrt(mean_squared_error(y_test, predictions))))
+    print(name, ("% .2f" % np.sqrt(mean_squared_error(y_test, predictions))))
 
 print("====== R^2 ======")
 for name,classifier in classifiers:
-    print(name, (classifier.score(X_test, y_test)))
+    print(name, ("% .2f" % classifier.score(X_test, y_test)))
 
 model = RandomForestRegressor()
 model.fit(X_train, y_train)
