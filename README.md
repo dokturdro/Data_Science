@@ -2,7 +2,7 @@ Repository for ML good practices to be stored, updated and reused in the future.
 
 # Index
 
-- Sklearn cryptocurrency timeseries prediction
+- [Sklearn cryptocurrency timeseries prediction](https://github.com/dokturdro/ML_practices/blob/master/crypto_pred_pract.ipynb)
 - Sklearn categorical data classification
 
 # Requirements
