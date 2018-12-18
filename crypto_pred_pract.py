@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import datetime
+import seaborn as sns
 
 # load dataset with singling out the rows with desired crypto
 df = pd.read_csv(r'C:\Users\Administrator\Desktop\datasets\crypto\crypto-markets.csv')
@@ -35,23 +35,21 @@ df_rolling_avg = df_rolling_avg.rename('rolling_avg', inplace=True)
 df = pd.concat([df, df_rolling_avg],1)
 df = df.fillna(method='backfill')
 
-# check for autocorrelation without seaborn graph
-print("====== Autocorrelation ======")
-with pd.option_context('display.max_rows', None, 'display.max_columns', None):
-    print(df.corr())
+# check for autocorrelation
+corr = df.corr()
+plt.subplots(figsize=(6,6))
+sns.heatmap(corr, annot=True)
+plt.show()
+
 
 df = df.drop(['name', 'volume'], 1)
 
-# cheking if the previous operations had taken desired shape
-print('\n====== Processed data ======')
-print(df.head())
-
 # importing sklearn ML modules
-from sklearn.model_selection import cross_val_score, cross_validate, train_test_split
+from sklearn.model_selection import cross_val_score, train_test_split
 from sklearn.linear_model import LinearRegression, BayesianRidge, ElasticNetCV
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score, mean_squared_error, r2_score
+from sklearn.metrics import mean_squared_error
 from sklearn.ensemble import RandomForestRegressor, ExtraTreesRegressor
 
 # shifting data to make space for a 3 months worth forecast, splitting for training
@@ -67,22 +65,23 @@ X = scaler.fit_transform(X)
 
 # list of lists with models to be tested
 classifiers = [['LinReg: ', LinearRegression()],
-               ['RF Reg: ', RandomForestRegressor(n_estimators=100)],
+               ['RFrReg: ', RandomForestRegressor(n_estimators=100)],
                ['BayesR: ', BayesianRidge()],
                ['ExTReg: ', ExtraTreesRegressor(n_estimators=200, min_samples_split=5)],
                ['ENetCV: ', ElasticNetCV()]]
 
 # printing tested models' accuracy with root mean squared error and r squared
 print("====== RMSE ======")
-for name,classifier in classifiers:
-    classifier = classifier
+for name, classifier in classifiers:
     classifier.fit(X_train, y_train)
-    predictions = classifier.predict(X_test)
-    print(name, ("% .2f" % np.sqrt(mean_squared_error(y_test, predictions))))
+    prediction = classifier.predict(X_test)
+    rmse = np.sqrt(mean_squared_error(y_test, prediction))
+    print(name, "% .2f" % rmse)
 
 print("====== R^2 ======")
-for name,classifier in classifiers:
-    print(name, ("% .2f" % classifier.score(X_test, y_test)))
+for name, classifier in classifiers:
+    score = classifier.score(X_test, y_test)
+    print(name, "% .2f" % score)
 
 # picking and using the best performing model
 model = RandomForestRegressor()
