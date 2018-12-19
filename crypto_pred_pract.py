@@ -82,17 +82,13 @@ for name, classifier in classifiers:
 print("====== R^2 ======")
 r2_result = []
 for name, classifier in classifiers:
-    r2_result.append([classifier, classifier.score(X_test, y_test)])
-    # top_regressor = max(r2_result, key=r2_result.get)
-print(r2_result)
+    score = classifier.score(X_test, y_test)
+    r2_result.append([classifier, score])
+    print(name, "% .2f" % score)
 r2_result.sort(key=lambda x: x[1], reverse=True)
+
 model = r2_result[0][0]
 
-print(r2_result)
-	    # print(name, "% .2f" % score)
-
-# picking and using the best performing model
-# model = RandomForestRegressor()
 model.fit(X_train, y_train)
 
 # predicting with the best performing model
