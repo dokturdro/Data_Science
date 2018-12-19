@@ -60,9 +60,10 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 forecast =  df.tail(90).drop(['forecast'], 1)
 
 # rescaling data
-scaler = MinMaxScaler(feature_range=(0,1))
-X = scaler.fit_transform(X)
-
+def rescale(X):
+    scaler = MinMaxScaler(feature_range=(0,1))
+    X = scaler.fit_transform(X)
+    return X
 # list of lists with models to be tested
 classifiers = [['LinReg: ', LinearRegression()],
                ['RFrReg: ', RandomForestRegressor(n_estimators=100)],
@@ -79,12 +80,19 @@ for name, classifier in classifiers:
     print(name, "% .2f" % rmse)
 
 print("====== R^2 ======")
+r2_result = []
 for name, classifier in classifiers:
-    score = classifier.score(X_test, y_test)
-    print(name, "% .2f" % score)
+    r2_result.append([classifier, classifier.score(X_test, y_test)])
+    # top_regressor = max(r2_result, key=r2_result.get)
+print(r2_result)
+r2_result.sort(key=lambda x: x[1], reverse=True)
+model = r2_result[0][0]
+
+print(r2_result)
+	    # print(name, "% .2f" % score)
 
 # picking and using the best performing model
-model = RandomForestRegressor()
+# model = RandomForestRegressor()
 model.fit(X_train, y_train)
 
 # predicting with the best performing model
