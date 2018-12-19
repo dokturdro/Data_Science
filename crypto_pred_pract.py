@@ -71,7 +71,7 @@ classifiers = [['LinReg: ', LinearRegression()],
                ['ExTReg: ', ExtraTreesRegressor(n_estimators=200, min_samples_split=5)],
                ['ENetCV: ', ElasticNetCV()]]
 
-# printing tested models' accuracy with root mean squared error and r squared
+# printing tested models' accuracy with root mean squared error
 print("====== RMSE ======")
 for name, classifier in classifiers:
     classifier.fit(X_train, y_train)
@@ -79,16 +79,17 @@ for name, classifier in classifiers:
     rmse = np.sqrt(mean_squared_error(y_test, prediction))
     print(name, "% .2f" % rmse)
 
+# listing and printing models' accuracy with r squared
 print("====== R^2 ======")
 r2_result = []
 for name, classifier in classifiers:
     score = classifier.score(X_test, y_test)
     r2_result.append([classifier, score])
     print(name, "% .2f" % score)
+
+# ordering the result list and picking the best performing regressor for fitting
 r2_result.sort(key=lambda x: x[1], reverse=True)
-
 model = r2_result[0][0]
-
 model.fit(X_train, y_train)
 
 # predicting with the best performing model
