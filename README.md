@@ -1,4 +1,4 @@
-Repository for ML good practices to be stored, updated and reused in the future.
+Repository for Data Science good practices to be stored, updated and reused in the future.
 
 # Index
 
