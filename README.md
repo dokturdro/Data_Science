@@ -17,3 +17,4 @@ Repository for Data Science good practices to be stored, updated and reused in t
 - Matplotlib
 - Tensorflow
 - Keras
+- PuLP
