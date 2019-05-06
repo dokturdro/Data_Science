@@ -26,8 +26,6 @@ df['FL_DATE'] = pd.to_datetime(df['FL_DATE'])
 df = df.set_index('FL_DATE')
 df = df.sort_values(by='FL_DATE')
 df = df.fillna(0)
-with pd.option_context('display.max_rows', None, 'display.max_columns', None):
-    print(df.head())
 
 corr = df.corr()
 plt.show()
@@ -91,9 +89,9 @@ y_pred = regressor.predict(X_test)
 
 importances = regressor.feature_importances_
 #Sort it
-print("Sorted Feature Importance:")
-sorted_feature_importance = sorted(zip(importances, list(X_train)), reverse=True)
-print(sorted_feature_importance)
+#print("====== Importance ======")
+sorted_feature_importance = sorted(zip(importances, X_train), reverse=True)
+print(importances)
 # and plot it in seaborn
 cm = confusion_matrix(y_test, y_pred, labels=[1, 0])
 cm_df = pd.DataFrame(cm,
