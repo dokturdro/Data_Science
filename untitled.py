@@ -29,7 +29,7 @@ df = df.fillna(0)
 with pd.option_context('display.max_rows', None, 'display.max_columns', None):
     print(df.head())
 
-df.plot(x='FL_DATE', y='CANCELLED')
+corr = df.corr()
 plt.show()
 
 YEAR = pd.get_dummies(df.YEAR).iloc[:,1:]
@@ -63,37 +63,42 @@ X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
 
 # classifiers to run and check
-classifiers = [['DecTree :', DecisionTreeRegressor()],
+regressors = [['DecTree :', DecisionTreeRegressor()],
                ['RandFor :', RandomForestRegressor()],
                ['ExTRegr :', ExtraTreesRegressor(n_estimators=1, min_samples_split=5)]]
 
 # print out benchmark functions for classifiers
 print("\n====== RMSE ======")
-for name,classifier in classifiers:
+for name,regressor in regressors:
     start = timer()
-    classifier = classifier
-    classifier.fit(X_train, y_train)
-    predictions = classifier.predict(X_test)
+    regressor = regressor
+    regressor.fit(X_train, y_train)
+    predictions = regressor.predict(X_test)
     end = timer()
     print(name, (np.sqrt(mean_squared_error(y_test, predictions))))
     print(end - start)
 
 print("\n====== R^2 ======")
-for name,classifier in classifiers:
-    print(name, (classifier.score(X_test, y_test)))
+for name,regressor in regressors:
+    print(name, (regressor.score(X_test, y_test)))
 
 # fit a selected classifier
-classifier = DecisionTreeRegressor(n_estimators=1)
-classifier.fit(X_train, y_train)
+regressor = DecisionTreeRegressor()
+regressor.fit(X_train, y_train)
 
 # run prediction..
-y_pred = classifier.predict(X_test)
+y_pred = regressor.predict(X_test)
 
+importances = regressor.feature_importances_
+#Sort it
+print("Sorted Feature Importance:")
+sorted_feature_importance = sorted(zip(importances, list(X_train)), reverse=True)
+print(sorted_feature_importance)
 # and plot it in seaborn
 cm = confusion_matrix(y_test, y_pred, labels=[1, 0])
 cm_df = pd.DataFrame(cm,
-             index = ['1', '0'], 
-             columns = ['1', '0'])
+                     index = ['1', '0'], 
+                     columns = ['1', '0'])
 ax = sns.heatmap(cm_df, fmt='d', cmap="Blues", cbar=False,  annot=True)
 
 plt.ylabel('True label')
