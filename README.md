@@ -6,6 +6,8 @@ Repository for Data Science good practices to be stored, updated and reused in t
 - [Sklearn categorical data classification](https://github.com/dokturdro/ML_practices/blob/master/svm_pract.ipynb)
 - [Tensorflow CNN custom architecture and dataset image classifier](https://github.com/dokturdro/ML_practices/blob/master/cnn_tensorflow.py)
 - [Tensorflow + Keras RNN text generator](https://github.com/dokturdro/ML_practices/blob/master/rnn_keras_textgen.py)
+- [XGBoost logistic regession](https://github.com/dokturdro/Data_Science/blob/master/xgb_doctorvisits.py)
+- [Vector autoregression time series](https://github.com/dokturdro/Data_Science/blob/master/var_hotels.ipynb)
 
 # Requirements
 
@@ -18,3 +20,5 @@ Repository for Data Science good practices to be stored, updated and reused in t
 - Tensorflow
 - Keras
 - PuLP
+- XGBoost
+- Statsmodels
