@@ -2,12 +2,11 @@ Repository for Data Science good practices to be stored, updated and reused in t
 
 # Index
 
-- [Sklearn cryptocurrency timeseries prediction](https://github.com/dokturdro/ML_practices/blob/master/crypto_pred_pract.ipynb)
-- [Sklearn categorical data classification](https://github.com/dokturdro/ML_practices/blob/master/svm_pract.ipynb)
-- [Tensorflow CNN custom architecture and dataset image classifier](https://github.com/dokturdro/ML_practices/blob/master/cnn_tensorflow.py)
-- [Tensorflow + Keras RNN text generator](https://github.com/dokturdro/ML_practices/blob/master/rnn_keras_textgen.py)
-- [XGBoost logistic regession](https://github.com/dokturdro/Data_Science/blob/master/xgb_doctorvisits.py)
-- [Vector autoregression time series](https://github.com/dokturdro/Data_Science/blob/master/var_hotels.ipynb)
+- [OpenCV lane detection](https://github.com/dokturdro/Data_Science/blob/master/cv_lane_recognition/lane_rec.ipynb)
+- [COVID prediction with SEIR model including ABC MCMC approximation](https://github.com/dokturdro/Data_Science/blob/master/tseries_covid/corona.ipynb)
+- [PyTorch CNN custom architecture and dataset image classifier](https://github.com/dokturdro/ML_practices/blob/master/cnn_tensorflow.py)
+- [Tensorflow + Keras RNN text generator](https://github.com/dokturdro/Data_Science/blob/master/nlp_textgen/rnn_keras_textgen.py)
+- [Sklearn cryptocurrency timeseries prediction](https://github.com/dokturdro/Data_Science/blob/master/tseries_crypto_prediction/crypto_pred_pract.ipynb)
 
 # Requirements
 
@@ -16,8 +15,10 @@ Repository for Data Science good practices to be stored, updated and reused in t
 - Numpy
 - Pandas
 - Seaborn
+- Bokeh
 - Matplotlib
 - Tensorflow
+- PyTorch
 - Keras
 - PuLP
 - XGBoost
