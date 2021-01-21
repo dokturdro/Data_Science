@@ -20,12 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e23ed39b-bc54-4edf-9176-9f00783aba2e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/plots.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/dtree_flights-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/dtree_flights-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dtree_flights.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/dtree_flights.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dtree_flights.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +46,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../New folder (2)" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager">
@@ -112,6 +107,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="254" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1602539120515" />
+    <state x="580" y="184" key="FileChooserDialogImpl" timestamp="1610372833737">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="580" y="184" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1610372833737" />
     <state width="1578" height="218" key="GridCell.Tab.0.bottom" timestamp="1602620343799">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
