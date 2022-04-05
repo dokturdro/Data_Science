@@ -1,0 +1,51 @@
+2022-04-04 15:47:35,347 INFO    MainThread:1732 [wandb_setup.py:_flush():70] setting env: {}
+2022-04-04 15:47:35,347 INFO    MainThread:1732 [wandb_setup.py:_flush():70] multiprocessing start_methods=spawn
+2022-04-04 15:47:35,348 INFO    MainThread:1732 [wandb_setup.py:_flush():70] setting login settings: {}
+2022-04-04 15:47:35,348 INFO    MainThread:1732 [wandb_setup.py:_flush():70] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x000001FEEDCF9190>
+2022-04-04 15:47:35,348 INFO    MainThread:1732 [wandb_init.py:_log_setup():318] Logging user logs to C:\Users\mdro\Desktop\programming\git\Data_Science\cv_unet_segmentation\wandb\run-20220404_154735-2dhivtuq\logs\debug.log
+2022-04-04 15:47:35,348 INFO    MainThread:1732 [wandb_init.py:_log_setup():319] Logging internal logs to C:\Users\mdro\Desktop\programming\git\Data_Science\cv_unet_segmentation\wandb\run-20220404_154735-2dhivtuq\logs\debug-internal.log
+2022-04-04 15:47:35,349 INFO    MainThread:1732 [wandb_run.py:finish():1053] finishing run dokturdro/unet/og2vlbow
+2022-04-04 15:47:35,350 INFO    MainThread:1732 [wandb_init.py:_jupyter_teardown():249] cleaning up jupyter logic
+2022-04-04 15:47:35,350 INFO    MainThread:1732 [jupyter.py:save_history():208] not saving jupyter history
+2022-04-04 15:47:35,350 INFO    MainThread:1732 [wandb_run.py:_atexit_cleanup():1366] got exitcode: 0
+2022-04-04 15:47:35,350 INFO    MainThread:1732 [wandb_run.py:_restore():1338] restore
+2022-04-04 15:47:36,326 INFO    MainThread:1732 [wandb_run.py:_wait_for_finish():1489] got exit ret: file_counts {
+  wandb_count: 1
+}
+pusher_stats {
+  uploaded_bytes: 890
+  total_bytes: 890
+}
+
+2022-04-04 15:47:38,334 INFO    MainThread:1732 [wandb_run.py:_wait_for_finish():1489] got exit ret: file_counts {
+  wandb_count: 4
+}
+pusher_stats {
+  uploaded_bytes: 7152
+  total_bytes: 7494
+}
+
+2022-04-04 15:47:40,349 INFO    MainThread:1732 [wandb_run.py:_wait_for_finish():1489] got exit ret: done: true
+exit_result {
+}
+file_counts {
+  wandb_count: 4
+}
+pusher_stats {
+  uploaded_bytes: 7494
+  total_bytes: 7494
+}
+
+2022-04-04 15:47:41,421 INFO    MainThread:1732 [wandb_run.py:_show_files():1711] logging synced files
+2022-04-04 15:47:43,503 INFO    MainThread:1732 [wandb_run.py:_console_start():1396] atexit reg
+2022-04-04 15:47:43,504 INFO    MainThread:1732 [wandb_run.py:_redirect():1259] redirect: SettingsConsole.WRAP
+2022-04-04 15:47:43,504 INFO    MainThread:1732 [wandb_run.py:_redirect():1294] Wrapping output streams.
+2022-04-04 15:47:43,504 INFO    MainThread:1732 [wandb_run.py:_redirect():1310] Redirects installed.
+2022-04-04 15:48:17,371 INFO    MainThread:1732 [wandb_init.py:_jupyter_setup():270] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x000001FEEEB11F10>
+2022-04-04 15:48:17,374 INFO    MainThread:1732 [wandb_setup.py:_flush():70] setting env: {}
+2022-04-04 15:48:17,374 INFO    MainThread:1732 [wandb_setup.py:_flush():70] multiprocessing start_methods=spawn
+2022-04-04 15:48:17,374 INFO    MainThread:1732 [wandb_setup.py:_flush():70] setting login settings: {}
+2022-04-04 15:48:17,374 INFO    MainThread:1732 [wandb_setup.py:_flush():70] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x000001FEEDCF9190>
+2022-04-04 15:48:17,374 INFO    MainThread:1732 [wandb_init.py:_log_setup():318] Logging user logs to C:\Users\mdro\Desktop\programming\git\Data_Science\cv_unet_segmentation\wandb\run-20220404_154817-10wub3ir\logs\debug.log
+2022-04-04 15:48:17,374 INFO    MainThread:1732 [wandb_init.py:_log_setup():319] Logging internal logs to C:\Users\mdro\Desktop\programming\git\Data_Science\cv_unet_segmentation\wandb\run-20220404_154817-10wub3ir\logs\debug-internal.log
+2022-04-04 15:48:17,375 INFO    MainThread:1732 [wandb_run.py:finish():1053] finishing run dokturdro/unet/2dhivtuq

@@ -1,0 +1,180 @@
+2022-04-04 15:47:06,210 INFO    MainThread:16640 [internal.py:wandb_internal():64] W&B internal server running at pid: 16640
+2022-04-04 15:47:06,212 INFO    WriterThread:16640 [datastore.py:open_for_write():77] open: C:\Users\mdro\Desktop\programming\git\Data_Science\cv_unet_segmentation\wandb\run-20220404_154705-og2vlbow\run-og2vlbow.wandb
+2022-04-04 15:47:06,212 DEBUG   HandlerThread:16640 [handler.py:handle_request():55] handle_request: check_version
+2022-04-04 15:47:06,216 DEBUG   SenderThread:16640 [sender.py:send():117] send: header
+2022-04-04 15:47:06,216 DEBUG   SenderThread:16640 [sender.py:send():117] send: request
+2022-04-04 15:47:06,216 DEBUG   SenderThread:16640 [sender.py:send_request():126] send_request: check_version
+2022-04-04 15:47:06,219 DEBUG   Thread-8  :16640 [connectionpool.py:_new_conn():971] Starting new HTTPS connection (1): pypi.org:443
+2022-04-04 15:47:06,488 DEBUG   Thread-8  :16640 [connectionpool.py:_make_request():452] https://pypi.org:443 "GET /pypi/wandb/json HTTP/1.1" 200 62723
+2022-04-04 15:47:06,578 DEBUG   SenderThread:16640 [sender.py:send():117] send: run
+2022-04-04 15:47:06,584 DEBUG   SenderThread:16640 [util.py:is_cygwin_git():372] Failed checking if running in CYGWIN due to: FileNotFoundError(2, 'The system cannot find the file specified', None, 2, None)
+2022-04-04 15:47:06,594 DEBUG   SenderThread:16640 [cmd.py:execute():870] Popen(['git', 'cat-file', '--batch-check'], cwd=C:\Users\mdro\Desktop\programming\git\Data_Science, universal_newlines=False, shell=None, istream=<valid stream>)
+2022-04-04 15:47:06,689 DEBUG   SenderThread:16640 [connectionpool.py:_new_conn():971] Starting new HTTPS connection (1): api.wandb.ai:443
+2022-04-04 15:47:07,089 DEBUG   SenderThread:16640 [connectionpool.py:_make_request():452] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 421
+2022-04-04 15:47:07,123 INFO    SenderThread:16640 [dir_watcher.py:__init__():165] watching files in: C:\Users\mdro\Desktop\programming\git\Data_Science\cv_unet_segmentation\wandb\run-20220404_154705-og2vlbow\files
+2022-04-04 15:47:07,124 INFO    SenderThread:16640 [sender.py:_start_run_threads():593] run started: og2vlbow with start time 1649080025
+2022-04-04 15:47:07,124 DEBUG   SenderThread:16640 [sender.py:send():117] send: summary
+2022-04-04 15:47:07,124 DEBUG   HandlerThread:16640 [handler.py:handle_request():55] handle_request: run_start
+2022-04-04 15:47:07,124 INFO    SenderThread:16640 [sender.py:_save_file():682] saving file wandb-summary.json with policy end
+2022-04-04 15:47:08,454 DEBUG   HandlerThread:16640 [meta.py:__init__():34] meta init
+2022-04-04 15:47:08,454 DEBUG   HandlerThread:16640 [meta.py:__init__():48] meta init done
+2022-04-04 15:47:08,455 DEBUG   HandlerThread:16640 [meta.py:probe():190] probe
+2022-04-04 15:47:08,477 DEBUG   HandlerThread:16640 [meta.py:_setup_git():180] setup git
+2022-04-04 15:47:08,478 DEBUG   HandlerThread:16640 [cmd.py:execute():870] Popen(['git', 'cat-file', '--batch-check'], cwd=C:\Users\mdro\Desktop\programming\git\Data_Science, universal_newlines=False, shell=None, istream=<valid stream>)
+2022-04-04 15:47:08,509 DEBUG   HandlerThread:16640 [cmd.py:execute():870] Popen(['git', 'rev-parse', '--show-toplevel'], cwd=C:\Users\mdro\Desktop\programming\git\Data_Science, universal_newlines=False, shell=None, istream=None)
+2022-04-04 15:47:08,544 DEBUG   HandlerThread:16640 [meta.py:_setup_git():187] setup git done
+2022-04-04 15:47:08,544 DEBUG   HandlerThread:16640 [meta.py:_save_pip():52] save pip
+2022-04-04 15:47:08,544 DEBUG   HandlerThread:16640 [meta.py:_save_pip():66] save pip done
+2022-04-04 15:47:08,544 DEBUG   HandlerThread:16640 [meta.py:probe():231] probe done
+2022-04-04 15:47:08,598 DEBUG   SenderThread:16640 [sender.py:send():117] send: files
+2022-04-04 15:47:08,598 DEBUG   HandlerThread:16640 [handler.py:handle_request():55] handle_request: status
+2022-04-04 15:47:08,598 INFO    SenderThread:16640 [sender.py:_save_file():682] saving file wandb-metadata.json with policy now
+2022-04-04 15:47:08,598 DEBUG   HandlerThread:16640 [handler.py:handle_request():55] handle_request: pause
+2022-04-04 15:47:08,598 INFO    HandlerThread:16640 [handler.py:handle_request_pause():229] stopping system metrics thread
+2022-04-04 15:47:08,599 DEBUG   SenderThread:16640 [sender.py:send():117] send: request
+2022-04-04 15:47:08,599 DEBUG   SenderThread:16640 [sender.py:send_request():126] send_request: status
+2022-04-04 15:47:08,601 DEBUG   SenderThread:16640 [connectionpool.py:_new_conn():971] Starting new HTTPS connection (1): api.wandb.ai:443
+2022-04-04 15:47:08,607 DEBUG   Thread-17 :16640 [connectionpool.py:_new_conn():971] Starting new HTTPS connection (1): api.wandb.ai:443
+2022-04-04 15:47:08,635 DEBUG   HandlerThread:16640 [handler.py:handle_request():55] handle_request: resume
+2022-04-04 15:47:08,635 INFO    HandlerThread:16640 [handler.py:handle_request_resume():224] starting system metrics thread
+2022-04-04 15:47:08,636 DEBUG   HandlerThread:16640 [handler.py:handle_request():55] handle_request: pause
+2022-04-04 15:47:08,636 INFO    HandlerThread:16640 [handler.py:handle_request_pause():229] stopping system metrics thread
+2022-04-04 15:47:08,671 DEBUG   HandlerThread:16640 [handler.py:handle_request():55] handle_request: resume
+2022-04-04 15:47:08,671 INFO    HandlerThread:16640 [handler.py:handle_request_resume():224] starting system metrics thread
+2022-04-04 15:47:08,988 DEBUG   SenderThread:16640 [connectionpool.py:_make_request():452] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 47
+2022-04-04 15:47:08,989 DEBUG   Thread-17 :16640 [connectionpool.py:_make_request():452] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 554
+2022-04-04 15:47:08,990 DEBUG   SenderThread:16640 [sender.py:send():117] send: stats
+2022-04-04 15:47:08,990 DEBUG   SenderThread:16640 [sender.py:send():117] send: stats
+2022-04-04 15:47:08,994 DEBUG   Thread-17 :16640 [connectionpool.py:_new_conn():971] Starting new HTTPS connection (1): storage.googleapis.com:443
+2022-04-04 15:47:09,073 DEBUG   HandlerThread:16640 [handler.py:handle_request():55] handle_request: pause
+2022-04-04 15:47:09,073 INFO    HandlerThread:16640 [handler.py:handle_request_pause():229] stopping system metrics thread
+2022-04-04 15:47:09,143 DEBUG   SenderThread:16640 [sender.py:send():117] send: stats
+2022-04-04 15:47:09,144 INFO    Thread-12 :16640 [dir_watcher.py:_on_file_created():213] file/dir created: C:\Users\mdro\Desktop\programming\git\Data_Science\cv_unet_segmentation\wandb\run-20220404_154705-og2vlbow\files\output.log
+2022-04-04 15:47:09,145 DEBUG   Thread-9  :16640 [connectionpool.py:_new_conn():971] Starting new HTTPS connection (1): api.wandb.ai:443
+2022-04-04 15:47:09,145 INFO    Thread-12 :16640 [dir_watcher.py:_on_file_created():213] file/dir created: C:\Users\mdro\Desktop\programming\git\Data_Science\cv_unet_segmentation\wandb\run-20220404_154705-og2vlbow\files\requirements.txt
+2022-04-04 15:47:09,145 INFO    Thread-12 :16640 [dir_watcher.py:_on_file_created():213] file/dir created: C:\Users\mdro\Desktop\programming\git\Data_Science\cv_unet_segmentation\wandb\run-20220404_154705-og2vlbow\files\wandb-metadata.json
+2022-04-04 15:47:09,559 DEBUG   Thread-9  :16640 [connectionpool.py:_make_request():452] https://api.wandb.ai:443 "POST /files/dokturdro/unet/og2vlbow/file_stream HTTP/1.1" 200 181
+2022-04-04 15:47:09,577 DEBUG   Thread-17 :16640 [connectionpool.py:_make_request():452] https://storage.googleapis.com:443 "PUT /wandb-production.appspot.com/dokturdro/unet/og2vlbow/wandb-metadata.json?Expires=1649166429&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=n2z8f0mNdq5FcMzsdC5rkyaFkBz5TzP%2F%2Fp%2Fv4P2cFFZzeb6dCSLIYgTaSJ0ukxwqBdeCs9eodcaRP6dm1v%2BBRxDuo9rbwkgkJc7hr7B3heyIOic%2FXP52smmP80WRbv0vlwqtKHHZyfczg5xGdNOI3LnBT86OTDfDdpGYHnt7Kvw9TxijM4ZS1l1htpBRAfnZ5gV7qcO%2FRNJcsH7QZqc35LpclvWpEsH%2B0AbKU5awBmgGZQZRu06Mm5ye4jS13k9NmGp531E4unbDke16MoZBf0lUq5BkvcMgY2Vx2wb3B0ZA5H6q%2FQKLPwoM2ExdIzi7P%2FA%2BOuGFB1TjKFWi8vFXkA%3D%3D HTTP/1.1" 200 0
+2022-04-04 15:47:09,579 INFO    Thread-17 :16640 [upload_job.py:push():133] Uploaded file C:\Users\mdro\AppData\Local\Temp\tmpxuylgjljwandb\4elur034-wandb-metadata.json
+2022-04-04 15:47:24,000 DEBUG   HandlerThread:16640 [handler.py:handle_request():55] handle_request: status
+2022-04-04 15:47:24,000 DEBUG   SenderThread:16640 [sender.py:send():117] send: request
+2022-04-04 15:47:24,000 DEBUG   SenderThread:16640 [sender.py:send_request():126] send_request: status
+2022-04-04 15:47:24,002 DEBUG   SenderThread:16640 [connectionpool.py:_new_conn():971] Starting new HTTPS connection (1): api.wandb.ai:443
+2022-04-04 15:47:24,346 DEBUG   SenderThread:16640 [connectionpool.py:_make_request():452] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 47
+2022-04-04 15:47:35,319 DEBUG   HandlerThread:16640 [handler.py:handle_request():55] handle_request: resume
+2022-04-04 15:47:35,319 INFO    HandlerThread:16640 [handler.py:handle_request_resume():224] starting system metrics thread
+2022-04-04 15:47:35,320 DEBUG   HandlerThread:16640 [handler.py:handle_request():55] handle_request: pause
+2022-04-04 15:47:35,320 INFO    HandlerThread:16640 [handler.py:handle_request_pause():229] stopping system metrics thread
+2022-04-04 15:47:35,981 DEBUG   HandlerThread:16640 [handler.py:handle_request():55] handle_request: resume
+2022-04-04 15:47:35,981 INFO    HandlerThread:16640 [handler.py:handle_request_resume():224] starting system metrics thread
+2022-04-04 15:47:35,982 DEBUG   SenderThread:16640 [sender.py:send():117] send: telemetry
+2022-04-04 15:47:35,984 DEBUG   HandlerThread:16640 [handler.py:handle_request():55] handle_request: poll_exit
+2022-04-04 15:47:35,986 DEBUG   SenderThread:16640 [connectionpool.py:_new_conn():971] Starting new HTTPS connection (1): api.wandb.ai:443
+2022-04-04 15:47:36,322 DEBUG   SenderThread:16640 [connectionpool.py:_make_request():452] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 426
+2022-04-04 15:47:36,325 DEBUG   SenderThread:16640 [sender.py:send():117] send: exit
+2022-04-04 15:47:36,325 INFO    SenderThread:16640 [sender.py:send_exit():195] handling exit code: 0
+2022-04-04 15:47:36,325 INFO    SenderThread:16640 [sender.py:send_exit():203] send defer
+2022-04-04 15:47:36,325 DEBUG   SenderThread:16640 [sender.py:send():117] send: request
+2022-04-04 15:47:36,325 DEBUG   SenderThread:16640 [sender.py:send_request():126] send_request: poll_exit
+2022-04-04 15:47:36,325 DEBUG   SenderThread:16640 [sender.py:send():117] send: stats
+2022-04-04 15:47:36,326 DEBUG   HandlerThread:16640 [handler.py:handle_request():55] handle_request: defer
+2022-04-04 15:47:36,327 INFO    HandlerThread:16640 [handler.py:handle_request_defer():69] handle defer: 0
+2022-04-04 15:47:36,327 DEBUG   SenderThread:16640 [sender.py:send():117] send: request
+2022-04-04 15:47:36,327 DEBUG   SenderThread:16640 [sender.py:send_request():126] send_request: defer
+2022-04-04 15:47:36,327 INFO    SenderThread:16640 [sender.py:send_request_defer():212] handle sender defer: 0
+2022-04-04 15:47:36,327 INFO    SenderThread:16640 [sender.py:send_request_defer():248] send defer: 1
+2022-04-04 15:47:36,328 DEBUG   HandlerThread:16640 [handler.py:handle_request():55] handle_request: defer
+2022-04-04 15:47:36,328 INFO    HandlerThread:16640 [handler.py:handle_request_defer():69] handle defer: 1
+2022-04-04 15:47:36,353 INFO    Thread-12 :16640 [dir_watcher.py:_on_file_modified():226] file/dir modified: C:\Users\mdro\Desktop\programming\git\Data_Science\cv_unet_segmentation\wandb\run-20220404_154705-og2vlbow\files\config.yaml
+2022-04-04 15:47:36,450 DEBUG   SenderThread:16640 [sender.py:send():117] send: request
+2022-04-04 15:47:36,451 DEBUG   SenderThread:16640 [sender.py:send_request():126] send_request: defer
+2022-04-04 15:47:36,451 INFO    SenderThread:16640 [sender.py:send_request_defer():212] handle sender defer: 1
+2022-04-04 15:47:36,451 INFO    SenderThread:16640 [sender.py:send_request_defer():248] send defer: 2
+2022-04-04 15:47:36,451 DEBUG   SenderThread:16640 [sender.py:send():117] send: stats
+2022-04-04 15:47:36,452 DEBUG   HandlerThread:16640 [handler.py:handle_request():55] handle_request: defer
+2022-04-04 15:47:36,452 INFO    HandlerThread:16640 [handler.py:handle_request_defer():69] handle defer: 2
+2022-04-04 15:47:36,452 DEBUG   SenderThread:16640 [sender.py:send():117] send: request
+2022-04-04 15:47:36,452 DEBUG   SenderThread:16640 [sender.py:send_request():126] send_request: defer
+2022-04-04 15:47:36,452 INFO    SenderThread:16640 [sender.py:send_request_defer():212] handle sender defer: 2
+2022-04-04 15:47:36,452 INFO    SenderThread:16640 [sender.py:send_request_defer():248] send defer: 3
+2022-04-04 15:47:36,452 DEBUG   HandlerThread:16640 [handler.py:handle_request():55] handle_request: defer
+2022-04-04 15:47:36,452 INFO    HandlerThread:16640 [handler.py:handle_request_defer():69] handle defer: 3
+2022-04-04 15:47:36,452 DEBUG   SenderThread:16640 [sender.py:send():117] send: summary
+2022-04-04 15:47:36,453 INFO    SenderThread:16640 [sender.py:_save_file():682] saving file wandb-summary.json with policy end
+2022-04-04 15:47:36,453 DEBUG   SenderThread:16640 [sender.py:send():117] send: request
+2022-04-04 15:47:36,453 DEBUG   SenderThread:16640 [sender.py:send_request():126] send_request: defer
+2022-04-04 15:47:36,453 INFO    SenderThread:16640 [sender.py:send_request_defer():212] handle sender defer: 3
+2022-04-04 15:47:36,453 INFO    SenderThread:16640 [sender.py:send_request_defer():248] send defer: 4
+2022-04-04 15:47:36,453 DEBUG   HandlerThread:16640 [handler.py:handle_request():55] handle_request: defer
+2022-04-04 15:47:36,453 INFO    HandlerThread:16640 [handler.py:handle_request_defer():69] handle defer: 4
+2022-04-04 15:47:36,453 DEBUG   SenderThread:16640 [sender.py:send():117] send: request
+2022-04-04 15:47:36,453 DEBUG   SenderThread:16640 [sender.py:send_request():126] send_request: defer
+2022-04-04 15:47:36,453 INFO    SenderThread:16640 [sender.py:send_request_defer():212] handle sender defer: 4
+2022-04-04 15:47:36,453 INFO    SenderThread:16640 [dir_watcher.py:finish():279] shutting down directory watcher
+2022-04-04 15:47:36,549 DEBUG   Thread-9  :16640 [connectionpool.py:_make_request():452] https://api.wandb.ai:443 "POST /files/dokturdro/unet/og2vlbow/file_stream HTTP/1.1" 200 181
+2022-04-04 15:47:37,357 INFO    SenderThread:16640 [dir_watcher.py:finish():309] scan: C:\Users\mdro\Desktop\programming\git\Data_Science\cv_unet_segmentation\wandb\run-20220404_154705-og2vlbow\files
+2022-04-04 15:47:37,358 INFO    SenderThread:16640 [dir_watcher.py:finish():315] scan save: C:\Users\mdro\Desktop\programming\git\Data_Science\cv_unet_segmentation\wandb\run-20220404_154705-og2vlbow\files\config.yaml config.yaml
+2022-04-04 15:47:37,358 INFO    SenderThread:16640 [dir_watcher.py:finish():315] scan save: C:\Users\mdro\Desktop\programming\git\Data_Science\cv_unet_segmentation\wandb\run-20220404_154705-og2vlbow\files\output.log output.log
+2022-04-04 15:47:37,358 INFO    SenderThread:16640 [dir_watcher.py:finish():315] scan save: C:\Users\mdro\Desktop\programming\git\Data_Science\cv_unet_segmentation\wandb\run-20220404_154705-og2vlbow\files\requirements.txt requirements.txt
+2022-04-04 15:47:37,360 INFO    SenderThread:16640 [dir_watcher.py:finish():315] scan save: C:\Users\mdro\Desktop\programming\git\Data_Science\cv_unet_segmentation\wandb\run-20220404_154705-og2vlbow\files\wandb-metadata.json wandb-metadata.json
+2022-04-04 15:47:37,361 INFO    SenderThread:16640 [dir_watcher.py:finish():315] scan save: C:\Users\mdro\Desktop\programming\git\Data_Science\cv_unet_segmentation\wandb\run-20220404_154705-og2vlbow\files\wandb-summary.json wandb-summary.json
+2022-04-04 15:47:37,361 DEBUG   Thread-22 :16640 [connectionpool.py:_new_conn():971] Starting new HTTPS connection (1): api.wandb.ai:443
+2022-04-04 15:47:37,362 INFO    SenderThread:16640 [sender.py:send_request_defer():248] send defer: 5
+2022-04-04 15:47:37,363 DEBUG   HandlerThread:16640 [handler.py:handle_request():55] handle_request: defer
+2022-04-04 15:47:37,365 INFO    HandlerThread:16640 [handler.py:handle_request_defer():69] handle defer: 5
+2022-04-04 15:47:37,365 DEBUG   Thread-23 :16640 [connectionpool.py:_new_conn():971] Starting new HTTPS connection (1): api.wandb.ai:443
+2022-04-04 15:47:37,365 DEBUG   SenderThread:16640 [sender.py:send():117] send: request
+2022-04-04 15:47:37,366 DEBUG   Thread-24 :16640 [connectionpool.py:_new_conn():971] Starting new HTTPS connection (1): api.wandb.ai:443
+2022-04-04 15:47:37,366 DEBUG   SenderThread:16640 [sender.py:send_request():126] send_request: defer
+2022-04-04 15:47:37,366 INFO    SenderThread:16640 [sender.py:send_request_defer():212] handle sender defer: 5
+2022-04-04 15:47:37,366 INFO    SenderThread:16640 [file_pusher.py:finish():174] shutting down file pusher
+2022-04-04 15:47:37,366 INFO    SenderThread:16640 [sender.py:send_request_defer():248] send defer: 6
+2022-04-04 15:47:37,366 DEBUG   HandlerThread:16640 [handler.py:handle_request():55] handle_request: defer
+2022-04-04 15:47:37,366 INFO    HandlerThread:16640 [handler.py:handle_request_defer():69] handle defer: 6
+2022-04-04 15:47:37,367 DEBUG   SenderThread:16640 [sender.py:send():117] send: request
+2022-04-04 15:47:37,367 DEBUG   SenderThread:16640 [sender.py:send_request():126] send_request: defer
+2022-04-04 15:47:37,367 INFO    SenderThread:16640 [sender.py:send_request_defer():212] handle sender defer: 6
+2022-04-04 15:47:37,623 DEBUG   Thread-9  :16640 [connectionpool.py:_make_request():452] https://api.wandb.ai:443 "POST /files/dokturdro/unet/og2vlbow/file_stream HTTP/1.1" 200 181
+2022-04-04 15:47:37,681 DEBUG   Thread-24 :16640 [connectionpool.py:_make_request():452] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 557
+2022-04-04 15:47:37,685 DEBUG   Thread-24 :16640 [connectionpool.py:_new_conn():971] Starting new HTTPS connection (1): storage.googleapis.com:443
+2022-04-04 15:47:37,731 DEBUG   Thread-23 :16640 [connectionpool.py:_make_request():452] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 549
+2022-04-04 15:47:37,739 DEBUG   Thread-23 :16640 [connectionpool.py:_new_conn():971] Starting new HTTPS connection (1): storage.googleapis.com:443
+2022-04-04 15:47:37,849 DEBUG   Thread-9  :16640 [connectionpool.py:_make_request():452] https://api.wandb.ai:443 "POST /files/dokturdro/unet/og2vlbow/file_stream HTTP/1.1" 200 181
+2022-04-04 15:47:37,850 INFO    SenderThread:16640 [sender.py:send_request_defer():248] send defer: 7
+2022-04-04 15:47:37,850 DEBUG   HandlerThread:16640 [handler.py:handle_request():55] handle_request: defer
+2022-04-04 15:47:37,850 INFO    HandlerThread:16640 [handler.py:handle_request_defer():69] handle defer: 7
+2022-04-04 15:47:37,850 DEBUG   SenderThread:16640 [sender.py:send():117] send: request
+2022-04-04 15:47:37,851 DEBUG   SenderThread:16640 [sender.py:send_request():126] send_request: defer
+2022-04-04 15:47:37,851 INFO    SenderThread:16640 [sender.py:send_request_defer():212] handle sender defer: 7
+2022-04-04 15:47:37,851 INFO    SenderThread:16640 [sender.py:send_request_defer():248] send defer: 8
+2022-04-04 15:47:37,851 DEBUG   SenderThread:16640 [sender.py:send():117] send: final
+2022-04-04 15:47:37,851 DEBUG   SenderThread:16640 [sender.py:send():117] send: footer
+2022-04-04 15:47:37,852 DEBUG   HandlerThread:16640 [handler.py:handle_request():55] handle_request: defer
+2022-04-04 15:47:37,852 INFO    HandlerThread:16640 [handler.py:handle_request_defer():69] handle defer: 8
+2022-04-04 15:47:37,852 DEBUG   SenderThread:16640 [sender.py:send():117] send: request
+2022-04-04 15:47:37,852 DEBUG   SenderThread:16640 [sender.py:send_request():126] send_request: defer
+2022-04-04 15:47:37,852 INFO    SenderThread:16640 [sender.py:send_request_defer():212] handle sender defer: 8
+2022-04-04 15:47:38,208 DEBUG   Thread-24 :16640 [connectionpool.py:_make_request():452] https://storage.googleapis.com:443 "PUT /wandb-production.appspot.com/dokturdro/unet/og2vlbow/wandb-summary.json?Expires=1649166458&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=VRk1p%2FHlzFgt7md1XzOC0Cfddpn1kF%2FfDFeFSjFxTfIm%2BF3Qjsqxhn6HBgcGYeWOCBrURSvNGhBsyoag3ckeDVdto5HcIzLthcP7y%2F7MiweNGnwpEvt7MlBsl%2Buttmic7k3aWMjLTVANeo5fx7YJc9xRxPat05muU7OZWOF%2FB%2FM1QBPNte2%2Bx09kT83IOUsF1nwCFpDayRUNqI6hy3ckRHNsYW7%2BqzToD5VZwrtba4DIdRhN22CiWrmFhbQxbmLzIyOhHx8AuOCDh7lDPBWt8zu8p%2FFzHOxKmAkwx2Pz%2FOwPnvJs9DgHFq5f4yGAigv5yw9q%2FsS%2BC2UcKbVyoqb9PQ%3D%3D HTTP/1.1" 200 0
+2022-04-04 15:47:38,209 INFO    Thread-24 :16640 [upload_job.py:push():133] Uploaded file C:\Users\mdro\Desktop\programming\git\Data_Science\cv_unet_segmentation\wandb\run-20220404_154705-og2vlbow\files\wandb-summary.json
+2022-04-04 15:47:38,261 DEBUG   Thread-23 :16640 [connectionpool.py:_make_request():452] https://storage.googleapis.com:443 "PUT /wandb-production.appspot.com/dokturdro/unet/og2vlbow/requirements.txt?Expires=1649166458&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=btZvYSO7iTokahBpVuSI5nWyxs%2BJOxUuWLi%2Fe%2BXuzxXYgc6hYHZNb9NOUJunxLAbYfqOPjnd%2F7eDfpPceR30OYDvZhwavZtKseCHrSmemQLttkdxw1%2BvqtlfyjFAPoYUXIkOMRXtoDKd1JjTprzB2BxBDsPDGxlFcwyC2JzmxFl5gfr5mF5oDSAouaQ8pls85Qp9fpfll%2Feq2x2J9wMnYJMtXa47NV9NI7t6Lqp8YSuLIz9XZ6K4A3hXayxeUp2FwDr9W8EBOcruBBEdkTiOoMXgesOj4b5aVFVIBJuOv53Ik2DM89sPCyaJ%2BzywyEn9zx7kttb68OYnY8CvAotU%2FQ%3D%3D HTTP/1.1" 200 0
+2022-04-04 15:47:38,262 INFO    Thread-23 :16640 [upload_job.py:push():133] Uploaded file C:\Users\mdro\Desktop\programming\git\Data_Science\cv_unet_segmentation\wandb\run-20220404_154705-og2vlbow\files\requirements.txt
+2022-04-04 15:47:38,333 DEBUG   HandlerThread:16640 [handler.py:handle_request():55] handle_request: poll_exit
+2022-04-04 15:47:38,333 DEBUG   SenderThread:16640 [sender.py:send():117] send: request
+2022-04-04 15:47:38,333 DEBUG   SenderThread:16640 [sender.py:send_request():126] send_request: poll_exit
+2022-04-04 15:47:38,839 DEBUG   Thread-22 :16640 [connectionpool.py:_make_request():452] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 550
+2022-04-04 15:47:38,846 DEBUG   Thread-22 :16640 [connectionpool.py:_new_conn():971] Starting new HTTPS connection (1): storage.googleapis.com:443
+2022-04-04 15:47:39,351 DEBUG   Thread-22 :16640 [connectionpool.py:_make_request():452] https://storage.googleapis.com:443 "PUT /wandb-production.appspot.com/dokturdro/unet/og2vlbow/config.yaml?Expires=1649166459&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=Te1biIohA8kSfGwcgwo9gHZ5LCexzVTwqLqx3GAKBGcCzvxjq%2FlgwQitFe0JsrhtEGnJ5RxPTY8o0uEsnzskP9JftUyDTVVP8ASGgB8GHencL1gZMwGoLGFEL5wjvyNs199gpc0DY%2BEwvj5%2BoqapLz3fCQ5d0fmfebNBMnWZ5%2B6fJX8ojOTpUfYeHTAq05SXUteRB2U7x05Yl9zXJVMszXvtW72%2FxQit%2FW2uGNDAl2wRrAqmwSARPDVv3JLZb9jD4RiYp6A3vSQnH9lwkZxHILywz6OXMEYkCIcpqslR3IrrU3ZPxpzYxIoQedire6fuBxbjib%2FZkYksww8x6hh%2Btg%3D%3D HTTP/1.1" 200 0
+2022-04-04 15:47:39,352 INFO    Thread-22 :16640 [upload_job.py:push():133] Uploaded file C:\Users\mdro\Desktop\programming\git\Data_Science\cv_unet_segmentation\wandb\run-20220404_154705-og2vlbow\files\config.yaml
+2022-04-04 15:47:40,348 DEBUG   HandlerThread:16640 [handler.py:handle_request():55] handle_request: poll_exit
+2022-04-04 15:47:40,348 DEBUG   SenderThread:16640 [sender.py:send():117] send: request
+2022-04-04 15:47:40,348 DEBUG   SenderThread:16640 [sender.py:send_request():126] send_request: poll_exit
+2022-04-04 15:47:40,349 INFO    SenderThread:16640 [file_pusher.py:join():179] waiting for file pusher
+2022-04-04 15:47:40,350 DEBUG   HandlerThread:16640 [handler.py:handle_request():55] handle_request: get_summary
+2022-04-04 15:47:40,351 DEBUG   HandlerThread:16640 [handler.py:handle_request():55] handle_request: sampled_history
+2022-04-04 15:47:40,351 DEBUG   HandlerThread:16640 [handler.py:handle_request():55] handle_request: shutdown
+2022-04-04 15:47:40,351 INFO    HandlerThread:16640 [handler.py:finish():274] shutting down handler
+2022-04-04 15:47:40,872 INFO    WriterThread:16640 [datastore.py:close():258] close: C:\Users\mdro\Desktop\programming\git\Data_Science\cv_unet_segmentation\wandb\run-20220404_154705-og2vlbow\run-og2vlbow.wandb
+2022-04-04 15:47:41,349 INFO    SenderThread:16640 [sender.py:finish():756] shutting down sender
+2022-04-04 15:47:41,349 INFO    SenderThread:16640 [file_pusher.py:finish():174] shutting down file pusher
+2022-04-04 15:47:41,349 INFO    SenderThread:16640 [file_pusher.py:join():179] waiting for file pusher
+2022-04-04 15:47:41,350 INFO    MainThread:16640 [internal.py:handle_exit():139] Internal process exited

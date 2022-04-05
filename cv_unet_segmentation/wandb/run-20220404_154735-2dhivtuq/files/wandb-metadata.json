@@ -1,0 +1,26 @@
+{
+    "os": "Windows-10-10.0.19044-SP0",
+    "python": "3.9.7",
+    "heartbeatAt": "2022-04-04T13:47:43.417268",
+    "startedAt": "2022-04-04T13:47:35.345389",
+    "docker": null,
+    "gpu": "NVIDIA GeForce RTX 3070 Laptop GPU",
+    "gpu_count": 1,
+    "cpu_count": 16,
+    "cuda": null,
+    "args": [
+        "-f",
+        "C:\\Users\\mdro\\AppData\\Roaming\\jupyter\\runtime\\kernel-1ed2b0fb-5f50-49cf-9300-8afa487d11b2.json"
+    ],
+    "state": "running",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": "git@github.com:dokturdro/Data_Science.git",
+        "commit": "2812eed02a73831658e00a597dd54622165922a6"
+    },
+    "email": "m.dro@vivaldi.net",
+    "root": "C:/Users/mdro/Desktop/programming/git/Data_Science",
+    "host": "LAPTOP-UGE7UO7I",
+    "username": "mdro",
+    "executable": "C:\\ProgramData\\Anaconda3\\python.exe"
+}
