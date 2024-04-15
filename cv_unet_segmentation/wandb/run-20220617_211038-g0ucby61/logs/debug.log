@@ -1,0 +1,43 @@
+2022-06-17 21:10:38,911 INFO    MainThread:5056 [wandb_setup.py:_flush():70] setting env: {}
+2022-06-17 21:10:38,911 INFO    MainThread:5056 [wandb_setup.py:_flush():70] multiprocessing start_methods=spawn
+2022-06-17 21:10:38,912 INFO    MainThread:5056 [wandb_setup.py:_flush():70] setting login settings: {}
+2022-06-17 21:10:38,912 INFO    MainThread:5056 [wandb_setup.py:_flush():70] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x0000019F87BF1970>
+2022-06-17 21:10:38,912 INFO    MainThread:5056 [wandb_init.py:_log_setup():318] Logging user logs to C:\Users\mdro\Desktop\programming\git\Data_Science\cv_unet_segmentation\wandb\run-20220617_211038-g0ucby61\logs\debug.log
+2022-06-17 21:10:38,912 INFO    MainThread:5056 [wandb_init.py:_log_setup():319] Logging internal logs to C:\Users\mdro\Desktop\programming\git\Data_Science\cv_unet_segmentation\wandb\run-20220617_211038-g0ucby61\logs\debug-internal.log
+2022-06-17 21:10:44,560 INFO    MainThread:5056 [wandb_run.py:_console_start():1396] atexit reg
+2022-06-17 21:10:44,561 INFO    MainThread:5056 [wandb_run.py:_redirect():1259] redirect: SettingsConsole.WRAP
+2022-06-17 21:10:44,561 INFO    MainThread:5056 [wandb_run.py:_redirect():1294] Wrapping output streams.
+2022-06-17 21:10:44,561 INFO    MainThread:5056 [wandb_run.py:_redirect():1310] Redirects installed.
+2022-06-17 21:10:44,561 INFO    MainThread:5056 [wandb_init.py:_pause_backend():239] pausing backend
+2022-06-17 21:10:44,569 INFO    MainThread:5056 [wandb_init.py:_resume_backend():244] resuming backend
+2022-06-17 21:10:44,571 INFO    MainThread:5056 [wandb_init.py:_pause_backend():239] pausing backend
+2022-06-17 21:10:59,271 INFO    MainThread:5056 [wandb_init.py:_resume_backend():244] resuming backend
+2022-06-17 21:10:59,272 INFO    MainThread:5056 [wandb_init.py:_pause_backend():239] pausing backend
+2022-06-17 21:11:03,258 INFO    MainThread:5056 [wandb_init.py:_resume_backend():244] resuming backend
+2022-06-17 21:11:03,260 INFO    MainThread:5056 [wandb_init.py:_pause_backend():239] pausing backend
+2022-06-17 21:12:22,254 INFO    MainThread:5056 [wandb_init.py:_resume_backend():244] resuming backend
+2022-06-17 21:12:22,255 INFO    MainThread:5056 [wandb_init.py:_pause_backend():239] pausing backend
+2022-06-17 21:12:22,516 INFO    MainThread:5056 [wandb_init.py:_resume_backend():244] resuming backend
+2022-06-17 21:12:22,518 INFO    MainThread:5056 [wandb_init.py:_pause_backend():239] pausing backend
+2022-06-17 21:12:33,226 INFO    MainThread:5056 [wandb_init.py:_resume_backend():244] resuming backend
+2022-06-17 21:12:33,228 INFO    MainThread:5056 [wandb_init.py:_pause_backend():239] pausing backend
+2022-06-17 21:12:33,414 INFO    MainThread:5056 [wandb_init.py:_resume_backend():244] resuming backend
+2022-06-17 21:12:33,434 INFO    MainThread:5056 [wandb_init.py:_pause_backend():239] pausing backend
+2022-06-17 21:12:33,621 INFO    MainThread:5056 [wandb_init.py:_resume_backend():244] resuming backend
+2022-06-17 21:12:33,720 INFO    MainThread:5056 [wandb_init.py:_pause_backend():239] pausing backend
+2022-06-17 21:12:34,196 INFO    MainThread:5056 [wandb_init.py:_resume_backend():244] resuming backend
+2022-06-17 21:12:34,197 INFO    MainThread:5056 [wandb_init.py:_pause_backend():239] pausing backend
+2022-06-17 21:12:34,712 INFO    MainThread:5056 [wandb_init.py:_resume_backend():244] resuming backend
+2022-06-17 21:12:34,713 INFO    MainThread:5056 [wandb_init.py:_pause_backend():239] pausing backend
+2022-06-17 21:12:35,882 INFO    MainThread:5056 [wandb_init.py:_resume_backend():244] resuming backend
+2022-06-17 21:12:35,963 INFO    MainThread:5056 [wandb_init.py:_pause_backend():239] pausing backend
+2022-06-17 21:13:14,433 INFO    MainThread:5056 [wandb_init.py:_resume_backend():244] resuming backend
+2022-06-17 21:13:14,434 INFO    MainThread:5056 [wandb_init.py:_pause_backend():239] pausing backend
+2022-06-17 21:13:14,989 INFO    MainThread:5056 [wandb_init.py:_resume_backend():244] resuming backend
+2022-06-17 21:13:14,992 INFO    MainThread:5056 [wandb_init.py:_pause_backend():239] pausing backend
+2022-06-17 21:29:02,514 INFO    MainThread:5056 [wandb_init.py:_resume_backend():244] resuming backend
+2022-06-17 21:29:02,515 INFO    MainThread:5056 [wandb_init.py:_pause_backend():239] pausing backend
+2022-06-17 21:29:02,695 INFO    MainThread:5056 [wandb_init.py:_resume_backend():244] resuming backend
+2022-06-17 21:29:02,698 INFO    MainThread:5056 [wandb_init.py:_pause_backend():239] pausing backend
+2022-06-17 21:29:03,122 INFO    MainThread:5056 [wandb_init.py:_resume_backend():244] resuming backend
+2022-06-17 21:29:03,133 INFO    MainThread:5056 [wandb_init.py:_pause_backend():239] pausing backend

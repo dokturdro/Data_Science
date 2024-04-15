@@ -1,0 +1,75 @@
+9382_500_f00029_original.jpg
+<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x19F83DD9670>
+8951_500_f00082_original.jpg
+<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x19F88978400>
+9256_500_f00216_original.jpg
+<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x19F889B0D90>
+12911_500_f00082_original.jpg
+<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x19F88870700>
+13402_500_f00080_original.jpg
+<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x19F889B0910>
+12821_500_f00066_original.jpg
+<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x19F889B0910>
+9037_500_f00012_original.jpg
+<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x19F889C5280>
+9022_500_f00027_original.jpg
+<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x19F889C50A0>
+13689_500_f00011_original.jpg
+<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x19F889C53A0>
+12752_500_f00057_original.jpg
+<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x19F889C51F0>
+13459_500_f00020_original.jpg
+<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x19F889C5580>
+C:\Users\mdro\Desktop\programming\git\Data_Science\_datasets/nuclei/images/
+C:\Users\mdro\Desktop\programming\git\Data_Science\_datasets/nuclei/images/
+9382_500_f00029_original.jpg
+<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x19F88870EE0>
+image [[[102.  71. 124.]
+  [159. 129. 167.]
+  [214. 186. 218.]
+  ...
+  [104.  73. 118.]
+  [150. 114. 159.]
+  [148. 111. 153.]]
+
+ [[100.  62. 105.]
+  [176. 140. 175.]
+  [201. 161. 196.]
+  ...
+  [108.  70. 120.]
+  [149. 108. 156.]
+  [161. 122. 173.]]
+
+ [[185. 156. 191.]
+  [207. 180. 210.]
+  [165. 126. 160.]
+  ...
+  [127.  80. 134.]
+  [ 99.  58. 109.]
+  [109.  74. 124.]]
+
+ ...
+
+ [[229. 206. 226.]
+  [228. 216. 226.]
+  [163. 123. 157.]
+  ...
+  [244. 233. 241.]
+  [238. 227. 236.]
+  [220. 193. 216.]]
+
+ [[183. 149. 180.]
+  [236. 225. 229.]
+  [220. 190. 219.]
+  ...
+  [231. 216. 231.]
+  [220. 200. 221.]
+  [152. 112. 160.]]
+
+ [[162. 117. 165.]
+  [217. 190. 209.]
+  [218. 193. 217.]
+  ...
+  [196. 175. 200.]
+  [179. 149. 188.]
+  [104.  64. 123.]]]
