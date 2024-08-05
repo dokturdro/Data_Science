@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p class="text-center text-primary fs-4">translate_app_v0.0.1</p>
+<!--<p class="text-center text-primary fs-4"><code>{{model_id}}</code></p>-->
+  <form id="source-form" class="form container" action="./translate">
+    <div class="row">
+      <div class="form-group col-5">
+          <div class="row">
+              <label for="src_lang" class="form-label col-sm-2">From:</label>
+              <div class="col-sm-3">
+                  <select class="form-select" id="src_lang">
+                      {% for src_lang in src_langs %}
+                      <option {% if def_src_lang == src_lang %} selected {% endif %}>{{src_lang}}</option>
+                      {% endfor %}
+                  </select>
+              </div>
+
+          </div>
+      </div>
+
+      <div class="form-group col-5">
+          <div class="row">
+              <label for="tgt_lang" class="form-label col-sm-2">To:</label>
+              <div class="col-sm-3">
+                  <select class="form-select" id="tgt_lang">
+                      {% for tgt_lang in tgt_langs %}
+                      <option {% if def_tgt_lang == tgt_lang %} selected {% endif %}>{{tgt_lang}}</option>
+                      {% endfor %}
+                  </select>
+              </div>
+          </div>
+      </div>
+  </div>
+  <br>
+
+  <div class="row">
+    <div class="col-5">
+        <div class="form-group row alert alert-primary">
+          <textarea id="source_txt" name="source" rows="6" class="form-control p-1"
+            placeholder="your text here"></textarea>
+        </div>
+        <div class="float-end row">
+        <button type="submit" class="btn btn-primary float-right">Translate→</button>
+      </div>
+    </div>
+    <div class="col-5">
+      <div class="form-group row alert alert-primary">
+        <textarea id="target" rows="6" class="form-control p-2"></textarea>
+      </div>
+      <div class="float-end row">
+      <div id="loading-progress" style="display:none" class="spinner-border text-dark text-success col-auto" role="status">
+      </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<script>
+
+  var last_result = null
+  function update_view(result) {
+    console.log(result)
+    last_result = result
+    $('#target').val(result["translation"].join('\n'));
+  }
+
+  window.onload = function () {
+    $(document).ajaxStart(function () {
+      $("#loading-progress").show();
+    });
+
+    $(document).ajaxStop(function () {
+      $("#loading-progress").hide();
+    });
+
+
+    $("#source-form").submit(function (event) {
+      event.preventDefault();
+      var $form = $(this)
+      url = $form.attr('action');
+      source = $('#source_txt').val().trim().split('\n')
+      src_lang = $('#src_lang').val()
+      tgt_lang = $('#tgt_lang').val()
+      sen_split = $('#ssplit_checkbox').prop('checked') 
+
+      data = JSON.stringify({
+        'source': source,
+        'src_lang': src_lang,
+        'tgt_lang': tgt_lang,
+        'sen_split': sen_split
+      })
+      console.log(data);
+
+      var posting = $.ajax(url, {
+        data: data,
+        contentType: 'application/json',
+        type: 'POST'
+      });
+
+      posting.done(update_view)
+      posting.fail(function (result) {
+        alert(result.responseText);
+        $('#target').text('');
+      });
+    });
+
+  }
+</script>
+
+{% endblock %}
