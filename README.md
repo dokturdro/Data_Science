@@ -1,4 +1,9 @@
-[LLM Translate app](https://github.com/dokturdro/Data_Science/tree/master/nlp_llm_translate_app) : local app with a frontend including dropdowns and translate fields.
+[TPOT and AutoGluon regression](https://github.com/dokturdro/Data_Science/tree/master/tab_tpot_autogluon) : a clean run in a notebook using some AutoML libraries.
+- TPOT
+- AutoGluon
+- scikit
+
+[LLM Translate app](https://github.com/dokturdro/Data_Science/tree/master/gen_llm_translate_app) : local app with a frontend including dropdowns and translate fields.
 - huggingface: multilanguage NLLB
 - PyTorch
 - flask/js
@@ -10,7 +15,7 @@
 [C++ CV scripts](https://github.com/dokturdro/Data_Science/tree/master/cv_cpp_scripts)
 - RANSAC
 
-[MLLM finetuning](https://github.com/dokturdro/Data_Science/tree/master/gen_finetuning) : 
+[MLLM finetuning](https://github.com/dokturdro/Data_Science/tree/master/gen_mllm_finetuning) : 
 - transformers: LLaVA
 - PyTorch
 - Tensorboard
