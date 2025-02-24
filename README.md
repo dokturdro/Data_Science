@@ -1,3 +1,7 @@
+[DICOM brain scan 3D viz](https://github.com/dokturdro/Data_Science/tree/master/cv_vtk_dicom_3dviz) : a simple 3D visualisation of a DICOM stack.
+- DICOM
+- vtk
+
 [TPOT and AutoGluon regression](https://github.com/dokturdro/Data_Science/tree/master/tab_tpot_autogluon) : a clean run in a notebook using some AutoML libraries.
 - TPOT
 - AutoGluon
